@@ -1,0 +1,44 @@
+S_t = {
+  price_features,        # OHLCV, returns, vol
+  liquidity_features,    # impact cost, turnover
+  fundamentals,          # optional (earnings, ratios)
+  macro_features,        # rates, FX, CPI
+  regime_features,       # yields, repo, deficit
+  sentiment_features     # Google Trends, FII/DII
+}
+
+
+Daily Frequency -:
+
+data/
+ ├── raw/
+ ├── processed/
+ ├── features/
+ └── metadata/
+
+
+indian_drl_data/
+│
+├── config/
+│   ├── tickers.yaml
+│   ├── date_ranges.yaml
+│
+├── data_ingestion/
+│   ├── nse_ohlcv.py
+│   ├── yfinance_fetch.py
+│   ├── kaggle_loader.py
+│   ├── rbi_dbie.py
+│   ├── fred_macro.py
+│   ├── google_trends.py
+│   └── stockedge_scraper.py
+│
+├── processing/
+│   ├── align_calendar.py
+│   ├── feature_engineering.py
+│   └── liquidity_metrics.py
+│
+├── storage/
+│   └── parquet_store.py
+│
+└── run_pipeline.py
+
