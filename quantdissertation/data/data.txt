@@ -42,3 +42,25 @@ indian_drl_data/
 │
 └── run_pipeline.py
 
+---------------------------------------------------------------------------
+DATA SETS are in this format..
+---------------------------------------------------------------------------
+
+data/
+├── equities/
+│   ├── NIFTY50/
+│   │   ├── RELIANCE.csv
+│   │   ├── TCS.csv
+│   │   └── ...
+│   └── NIFTY100/
+├── liquidity/
+│   └── impact_cost.csv
+├── macro/
+│   ├── rbi_gsec_10y.csv
+│   ├── rbi_cpi.csv
+│   ├── repo_rate.csv
+│   ├── usdinr_fred.csv
+├── sentiment/
+│   └── google_trends_nifty.csv
+
+
