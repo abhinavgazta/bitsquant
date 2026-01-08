@@ -1,4 +1,8 @@
 data/*
 data
 .idea
-
+experiments/api/env3
+experiments/api/env3/*
+experiments/api/env3/lib/*
+*__pycache__
+experiments/api/env3*.*
