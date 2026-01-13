@@ -26,6 +26,16 @@ export interface PerformanceData {
   sharpe: number;
 }
 
+export interface OHLCVData {
+  symbol: string;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  volume: number;
+  timestamp: string;
+}
+
 // Generate training metrics showing convergence
 export function generateTrainingData(episodes: number): TrainingMetrics[] {
   const data: TrainingMetrics[] = [];
@@ -131,6 +141,33 @@ export function generateEpisodeStateData(steps: number = 252) {
   
   return data;
 }
+
+// Generate mock OHLCV data for selected stocks
+export function generateOHLCVData(stocks: string[]): OHLCVData[] {
+  const data: OHLCVData[] = [];
+  const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+
+  stocks.forEach(symbol => {
+    const close = 1000 + Math.random() * 4000; // Base price
+    const open = close * (1 + (Math.random() - 0.5) * 0.02); // +/- 1% of close
+    const high = Math.max(open, close) * (1 + Math.random() * 0.015); // 0-1.5% above max(open, close)
+    const low = Math.min(open, close) * (1 - Math.random() * 0.015); // 0-1.5% below min(open, close)
+    const volume = Math.floor(100000 + Math.random() * 10000000);
+
+    data.push({
+      symbol,
+      open,
+      high,
+      low,
+      close,
+      volume,
+      timestamp,
+    });
+  });
+
+  return data;
+}
+
 
 // Explanation text for DRL concepts
 export const DRL_EXPLANATIONS = {

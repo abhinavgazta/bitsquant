@@ -8,7 +8,6 @@ import { TrainingDashboard } from './components/TrainingDashboard';
 import { PortfolioWeights } from './components/PortfolioWeights';
 import { RealTimeTrader } from './components/RealTimeTrader';
 import { PerformanceMetrics } from './components/PerformanceMetrics';
-import { TechnicalDocs } from './components/TechnicalDocs';
 import { 
   generateTrainingData, 
   generatePortfolioWeights, 
@@ -19,7 +18,7 @@ import {
   type PerformanceData
 } from './utils/mockData';
 import { Badge } from './components/ui/badge';
-import { Brain, Play, BarChart3, TrendingUp, Info, Code } from 'lucide-react';
+import { Brain, Play, BarChart3, TrendingUp, Info } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from './components/ui/alert';
 
 function App() {
@@ -109,7 +108,7 @@ function App() {
       <main className="container mx-auto px-4 py-6">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <div className="mb-6 overflow-x-auto">
-            <TabsList className="grid w-full grid-cols-6 min-w-[600px]">
+            <TabsList className="grid w-full grid-cols-5 min-w-[600px]">
               <TabsTrigger value="setup">
                 <Info className="size-4 mr-2" />
                 Setup
@@ -129,10 +128,6 @@ function App() {
               <TabsTrigger value="performance">
                 <BarChart3 className="size-4 mr-2" />
                 Performance
-              </TabsTrigger>
-              <TabsTrigger value="code">
-                <Code className="size-4 mr-2" />
-                Code
               </TabsTrigger>
             </TabsList>
           </div>
@@ -316,11 +311,6 @@ function App() {
                 </CardContent>
               </Card>
             )}
-          </TabsContent>
-
-          {/* Code Tab */}
-          <TabsContent value="code">
-            <TechnicalDocs />
           </TabsContent>
         </Tabs>
       </main>
