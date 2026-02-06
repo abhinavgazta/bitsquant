@@ -264,6 +264,7 @@ class TransformerExtractor(BaseFeaturesExtractor):
         # Project -> (Batch, features_dim)
         return self.act(self.linear_out(x))
 
+
 # ==========================================
 # 4. TRAINING & EVALUATION PIPELINE
 # ==========================================

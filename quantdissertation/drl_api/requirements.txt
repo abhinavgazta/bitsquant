@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pydantic
+gymnasium
+pandas
+numpy
+yfinance
+torch
+stable-baselines3
+ta
+matplotlib
+seaborn
+shap
+optuna
+scipy
